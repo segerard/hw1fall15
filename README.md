@@ -21,7 +21,7 @@ can submit this single file to the ICON HW1 dropbox as follows:
 
 The files`spec/part[123]_spec.rb` contain RSpec tests for each of the three
 parts.  For example, to test your answers to Part 1, use the command:
- rspec/part1_spec.rb`
+ `rspec spec/part1_spec.rb`
 The command `rspec` with no arguments runs the tests in all
 the files `spec/*_spec.rb`.
 
