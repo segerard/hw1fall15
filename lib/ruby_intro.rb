@@ -3,33 +3,77 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  else
+    arr.inject {|sum,i| sum+i}
+  end
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    return 0
+  elsif arr.size == 1
+    return arr[0]
+  else
+    temp = arr.sort
+    return temp[-1] + temp[-2]
+  end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  if arr.size <2
+    return false
+  else
+    !!temp = arr.find {|i| arr[arr.index(i)+1..-1].include?(n-i)}
+  end
 end
 
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if (s =~ /\A[a-z]/i).nil?
+    return false
+  else
+    consonant = ['A','a','E','e','I','i','O','o','U','u']
+    !consonant.include?(s[0])
+  end
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if (s =~ /\A[01]+\z/).nil?
+    return false
+  else 
+    (s.to_i(2))%4 == 0
+  end
 end
 
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize (i,pr)
+    raise ArgumentError, 'Invalid ISBN number' unless i.strip.empty? == false
+    @isbn = i
+    raise ArgumentError, 'price must be greater than 0' unless pr>0
+    @price = pr
+  end
+  def isbn
+    @isbn
+  end
+  def price
+    @price
+  end
+  def isbn= (i)
+    @isbn = i
+  end
+  def price= (pr)
+    @price = pr
+  end
+  def price_as_string
+    return sprintf "$%.2f", @price
+  end
 end
