@@ -39,8 +39,8 @@ def starts_with_consonant? s
   if (s =~ /\A[a-z]/i).nil?
     return false
   else
-    consonant = ['A','a','E','e','I','i','O','o','U','u']
-    !consonant.include?(s[0])
+    consonant = ['A','E','I','O','U']
+    !consonant.include?(s[0].upcase)
   end
 end
 
